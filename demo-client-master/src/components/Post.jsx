@@ -33,7 +33,7 @@ import LikeButton from "./likebutton";
 //import Avatar from '@mui/material/Avatar'
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+//import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Card from "@mui/material/Card";
 import Avatar from "@mui/material/Avatar";
 import { red } from "@mui/material/colors";

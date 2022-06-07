@@ -9,7 +9,7 @@ import Drawer from "./components/drawer";
 import { Route, Routes } from "react-router-dom";
 import SignOut from "./components/signout";
 import Success from "./components/success";
-import Upload from "./components/upload";
+//import Upload from "./components/upload";
 import { useContext } from "react";
 import { Context } from "./userContext/Context";
 import Home from "./components/Home";
