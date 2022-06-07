@@ -28,6 +28,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Container from "@mui/material/Container";
 import { useState,  } from "react";
+import LikeButton from "./likebutton";
 // import commonApi from "../api/common";
 //import Avatar from '@mui/material/Avatar'
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -99,7 +100,7 @@ if(images.length!==0)
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                  R
+                  
                 </Avatar>
               }
               action={
@@ -123,7 +124,8 @@ if(images.length!==0)
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
-                <FavoriteBorderOutlinedIcon />
+
+               < LikeButton/>
               </IconButton>
               <IconButton aria-label="share">
                 <ThumbDownOutlinedIcon />
@@ -161,7 +163,7 @@ if(images.length!==0)
             <Box
               component="form"
               sx={{
-                "& > :not(style)": { m: 1, width: "50ch" },
+                "& > :not(style)": { m: 1,width: "170ch" },
               }}
             >
               <TextField

@@ -42,6 +42,7 @@ function App() {
           path="/"
           element={user ? <Home /> : <SignIn />}
         />
+        
         <Route exact path="/drawer" element={user ? <Drawer /> : <SignIn />} />
         <Route exact path="/signup" element={user ? <Drawer /> : <SignUp />} />
         <Route exact path="/signin" element={user ? <Drawer /> : <SignIn />} />

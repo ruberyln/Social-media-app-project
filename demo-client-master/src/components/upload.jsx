@@ -121,7 +121,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-         HOME
+         UPLOAD
           </Typography>
         </Toolbar>
       </AppBar>
