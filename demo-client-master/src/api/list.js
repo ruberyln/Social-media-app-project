@@ -23,6 +23,14 @@ const apiList = {
   uploadImage:{
     url: () => "api/upload",
     method: "post",
+  },
+  upVoting:{
+    url:()=>"api/posts/upVote",
+    method:"post",
+  },
+  downVoting:{
+    url:()=>"api/posts/downVote",
+    method:"post",
   }
 };
 export default apiList;

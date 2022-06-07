@@ -48,6 +48,9 @@ export default function SignIn() {
     password: "",
   });
 
+  const validateUserData=()=>{
+    return (userData.email!=="") && (userData.password!=="")
+  }
   const handleChange = (event) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
@@ -137,6 +140,7 @@ export default function SignIn() {
               color="secondary"
               //component ={Link}
               // href = {"/drawer "}
+              disabled={!validateUserData()}
               onSubmit={handleSubmit()}
             >
               Sign In

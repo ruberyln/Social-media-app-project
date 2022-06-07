@@ -1,37 +1,21 @@
 import * as React from "react";
 import { styled,  } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-//import MuiDrawer from "@mui/material/Drawer";
-//import MuiAppBar from "@mui/material/AppBar";
-//import Toolbar from "@mui/material/Toolbar";
-//import List from "@mui/material/List";
-//import CssBaseline from "@mui/material/CssBaseline";
+
 import Typography from "@mui/material/Typography";
 //import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-//import MenuIcon from "@mui/icons-material/Menu";
-//import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-//import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-//import ListItem from "@mui/material/ListItem";
+
 import Collapse from "@mui/material/Collapse";
 import commonApi from "../api/common";
-//import ListItemButton from "@mui/material/ListItemButton";
-//import ListItemIcon from "@mui/material/ListItemIcon";
-//import ListItemText from "@mui/material/ListItemText";
-//import Link from "@mui/material/Link";
+
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-//import HomeIcon from "@mui/icons-material/Home";
-//import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-//import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
-//import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-//import PowerSettingsNewOutlinedIcon from "@mui/icons-material/PowerSettingsNewOutlined";
+
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Container from "@mui/material/Container";
 import { useState,  } from "react";
 import LikeButton from "./likebutton";
-// import commonApi from "../api/common";
-//import Avatar from '@mui/material/Avatar'
-//import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+
 import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 //import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Card from "@mui/material/Card";
@@ -62,7 +46,7 @@ function Post({ post, fetchPosts }) {
     setExpanded(!expanded);
   };
 
-  const { createdBy, desc, createdAt, _id, comments ,images} = post;
+  const { createdBy, desc, createdAt, _id, comments ,images,likes,disLikes} = post;
   const { user } = React.useContext(Context);
 let imgPath=""
 if(images.length!==0)
@@ -71,6 +55,7 @@ if(images.length!==0)
 }
   const [comment, setComment] = useState("");
 
+ 
   const handleComment = async (e) => {
     e.preventDefault();
     let data = {
@@ -78,7 +63,6 @@ if(images.length!==0)
       userId: user._id,
       postId: _id,
     };
-
     await commonApi({
       action: "createComment",
       data: data,
@@ -122,14 +106,12 @@ if(images.length!==0)
                 {desc}
               </Typography>
             </CardContent>
-            <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
+            
+              {/* <IconButton aria-label="add to favorites">
 
-               < LikeButton/>
-              </IconButton>
-              <IconButton aria-label="share">
-                <ThumbDownOutlinedIcon />
-              </IconButton>
+              </IconButton> */}
+              < LikeButton likes={likes} disLikes={disLikes} fetchPosts={fetchPosts} postId={_id}/>
+              <CardActions >
               <Typography variant="h6">View Comments
               <ExpandMore
                 expand={expanded}

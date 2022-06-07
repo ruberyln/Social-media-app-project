@@ -11,6 +11,8 @@ router.post("/create", async (req, res) => {
   return res.status(200).json(result);
 });
 
+
+
 router.post("/findAll", async (req, res) => {
   let { data } = req.body;
 
@@ -24,4 +26,41 @@ router.post("/findAll", async (req, res) => {
 });
 
 
+router.post("/upVote", async (req, res) => {
+  let body = req.body;
+  let result = await Post.findOneAndUpdate(
+    { _id: body.postId },
+    {
+      $addToSet: {
+        likes: body.userId
+      },
+      $pull:{
+        disLikes:body.userId
+      }
+    },
+    { new: true }
+  );
+  return res.status(200).json(result);
+});
+// {
+//   userId,
+//   postId
+// }
+router.post("/downVote", async (req, res) => {
+  let body = req.body;
+  let result = await Post.findOneAndUpdate(
+    { _id: body.postId },
+    {
+      $addToSet: {
+        disLikes: body.userId
+      },
+      $pull:{
+        likes:body.userId
+      }
+    },
+    { new: true }
+  );
+  return res.status(200).json(result);
+});
 module.exports = router;
+

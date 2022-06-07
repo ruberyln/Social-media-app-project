@@ -1,62 +1,99 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-//import FavoriteIcon from '@mui/icons-material/Favorite';
+import commonApi from "../api/common";
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { Button } from "@mui/material";
+import { Context } from "../userContext/Context";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
+function LikeButton({ likes, disLikes, fetchPosts, postId }) {
 
-function LikeButton () {
+    const { user } = React.useContext(Context);
 
-const [like,setlike] =useState(0)
-const [dislike,setdislike] =useState(0)
+    const [like, setlike] = useState(likes.length)
+    const [dislike, setdislike] = useState(disLikes.length)
 
 
-const [likeactive,setlikeactive] =useState(false)
-const [dislikeactive,setdislikeactive] =useState(false)
 
-function likef() {
-if (likeactive) {
-    setlikeactive(false)
-    setlike(like-1)
-    
+    const [likeactive, setlikeactive] = useState(likes.includes(user._id))
+    const [dislikeactive, setdislikeactive] = useState(disLikes.includes(user._id))
 
-}else {
-    setlikeactive(true)
-    setlike(like+1)
-    if(dislikeactive){
-        setdislikeactive(false)
-        setlike(like+1)
-        setdislike(dislike-1)
+
+
+    const handleLikes = async (e) => {
+        e.preventDefault();
+
+        await commonApi({
+            action: "upVoting",
+            data: {
+                userId: user._id,
+                postId: postId
+            },
+        }).then((res) => {
+            fetchPosts();
+            if (likeactive) {
+                setlikeactive(false)
+                setlike(like - 1)
+
+            } else {
+                setlikeactive(true)
+                setlike(like + 1)
+                if (dislikeactive) {
+                    setdislikeactive(false)
+                    setlike(like + 1)
+                    setdislike(dislike - 1)
+                }
+            }
+        })
+
     }
-}
 
-}
-function dislikef() {
-    if (dislikeactive) {
-        setdislikeactive(false)
-        setdislike(dislike-1)
-        
-    
+    const handleDisLikes = async (e) => {
+        e.preventDefault();
+
+        await commonApi({
+            action: "downVoting",
+            data: {
+                userId: user._id,
+                postId: postId
+            },
+        }).then((res) => {
+            fetchPosts();
+           
+            if (dislikeactive) {
+                setdislikeactive(false)
+                setdislike(dislike - 1)
+            }
+            else {
+                setdislikeactive(true)
+                setdislike(dislike + 1)
+                if (likeactive) {
+                    setlikeactive(false)
+                    setdislike(dislike + 1)
+                    setlike(like - 1)
+                }
+            }
+
+        })
+
     }
-    else {
-        setdislikeactive(true)
-        setdislike(dislike+1)
+  
+    return (
+        <>{likeactive && <Button onClick={handleDisLikes} color="secondary">
+            <FavoriteIcon style={{ color: "secondary" }} />
+        </Button>}
+            {!likeactive && <Button onClick={handleLikes} color="secondary">< FavoriteBorderIcon />
+            </Button>}{like}
 
-        if(likeactive){
-            setlikeactive(false)
-            setdislike(dislike+1)
-            setlike(like-1)
-        }
-    }
-}
-return (
+            {dislikeactive && <Button onClick={handleLikes} color="secondary">< ThumbDownIcon />
+            </Button>}
+            
+            {!dislikeactive && <Button onClick={handleDisLikes} color="secondary" >
+                <ThumbDownOffAltIcon /></Button>}{dislike} </>
 
-    <><Button onClick = {likef} color = "secondary">
-       < FavoriteBorderIcon/>
-     {like} </Button>
-        <Button onClick = {dislikef}  color ="secondary" > 
-         <ThumbDownIcon />  {dislike} </Button></>
 
-);
+
+    );
 };
-        export default LikeButton
+export default LikeButton;
