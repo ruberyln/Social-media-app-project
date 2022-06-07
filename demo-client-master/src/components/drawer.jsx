@@ -5,6 +5,8 @@ import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
+import { Context } from '../userContext/Context';
+import {useContext} from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
@@ -99,7 +101,10 @@ export default function MiniDrawer({fetchPosts}) {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
+const {dispatch} =useContext(Context);
+const handleLogout =() => {
+  dispatch ({type :"LOGOUT"})
+};
   const handleDrawerClose = () => {
     setOpen(false);
   };
@@ -238,7 +243,7 @@ export default function MiniDrawer({fetchPosts}) {
                 px: 2.5,
               }}
               component={Link}
-              href={"/signout "}
+              onClick= {handleLogout}
             >
               <ListItemIcon
                 sx={{
