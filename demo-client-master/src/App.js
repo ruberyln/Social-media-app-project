@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import SignIn from "./components/signin";
 import SignUp from "./components/signup";
 //import Link from '@mui/material/Link';
+import Profile from "./components/profile";
 import Drawer from "./components/drawer";
 import { Route, Routes } from "react-router-dom";
 import SignOut from "./components/signout";
@@ -31,6 +32,11 @@ function App() {
           exact
           path="/signout"
           element={user ? <SignOut /> : <SignIn />}
+        />
+          <Route
+          exact
+          path="/profile"
+          element={user ? <Profile /> : <Profile />}
         />
         <Route
           exact

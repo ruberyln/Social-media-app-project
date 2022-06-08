@@ -16,7 +16,7 @@ import Container from "@mui/material/Container";
 import { useState,  } from "react";
 import LikeButton from "./likebutton";
 
-import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+//import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 //import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Card from "@mui/material/Card";
 import Avatar from "@mui/material/Avatar";
@@ -80,7 +80,10 @@ if(images.length!==0)
     <div>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <Container component="main">
-          <Card alignItems="center" justifyContent="center">
+          <Card 
+          alignItems="center" 
+          justifyContent="center" 
+           >
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

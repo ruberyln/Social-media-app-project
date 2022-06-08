@@ -31,6 +31,7 @@ export default function Home() {
   return (
     <>
       <MiniDrawer />
+      
       {posts.map((post) => {
         return <Post post={post} fetchPosts={fetchPosts} />;
       })}

@@ -216,7 +216,7 @@ const handleLogout =() => {
                 px: 2.5,
               }}
               component={Link}
-              href={"/profile "}
+              href={"/profile"}
             >
               <ListItemIcon
                 sx={{
