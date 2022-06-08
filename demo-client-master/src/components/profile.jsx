@@ -11,10 +11,10 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import {Avatar, IconButton} from '@mui/material';
-
+import Follow from './follow'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+//import Link from '@mui/material/Link';
 import Drawer from './drawer'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -26,6 +26,9 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const theme = createTheme();
 
 export default function Profile() {
+
+
+
   return (
       <><Drawer /><ThemeProvider theme={theme}>
           <CssBaseline />
@@ -40,22 +43,11 @@ export default function Profile() {
                   }}
               >
                   <Container maxWidth="sm">
-                  <Avatar src="/broken-image.jpg" />
+                <Avatar src="/broken-image.jpg" />  
 
                 
-                  
-                      <Stack
-                          sx={{ pt: 0.5 }}
-                          direction="row"
-                          spacing={10}
-                          justifyContent="center"
-                      >
-                          <Button variant="outlined" color = "secondary">Followers</Button>
-                          <Button variant="outlined" color = "secondary">Following </Button>
-                          <IconButton variant="outlined" color = "secondary" > <PersonAddAlt1Icon/> </IconButton>
-
-                         
-                      </Stack>
+                  <Follow/>
+                     
                   </Container>
               </Box>
               <Container sx={{ py: 8 }} maxWidth="md">
