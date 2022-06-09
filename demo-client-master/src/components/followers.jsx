@@ -6,15 +6,16 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-
+import  Drawer  from './drawer';
 import { Container,Box } from '@mui/material';
 export default function Followers() {
 
   return (
-      <><Container component ="main">
+      <><Drawer/>
+      <Container component ="main">
            <Box
           sx={{
-            marginTop: 8,
+            marginTop: 11,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

@@ -4,7 +4,7 @@ import { styled } from '@mui/material/styles';
 //import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
-import {Typography, }from '@mui/material';
+import {Typography,Box }from '@mui/material';
 
 
 
@@ -28,7 +28,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
       color: '#fff',
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.mode === 'dark' ? '#177ddc' : '#1890ff',
+        backgroundColor: theme.palette.mode === 'dark' ? '#a22bd9' : '#a22bd9',
       },
     },
   },
@@ -45,14 +45,19 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     borderRadius: 16 / 2,
     opacity: 1,
     backgroundColor:
-      theme.palette.mode === 'dark' ? 'rgba(255,255,255,.35)' : 'rgba(0,0,0,.25)',
+      theme.palette.mode === 'dark' ? 'rgba(255,255,255,.35)' : 'rgba(0,0,255,0.3)',
     boxSizing: 'border-box',
   },
 }));
 
 export default function Toggle() {
   return (
-
+<Box  sx={{
+            marginTop: 11,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}>
       <Stack direction="row" spacing={1} alignItems="flex-end" justifyContent= "flex-end">
         <Typography>Others</Typography>
         <AntSwitch defaultChecked color ="secondary" inputProps={{ 'aria-label': 'ant design' }}
@@ -61,6 +66,6 @@ export default function Toggle() {
         <Typography>Following</Typography>
       </Stack>
       
-  
+      </Box>
   );
 }

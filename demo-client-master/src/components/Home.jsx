@@ -13,7 +13,7 @@ import Post from "./Post";
 
 //import Stack from '@mui/material/Stack';
 
-import MiniDrawer from "./drawer";
+import Drawer from "./drawer";
 
 export default function Home() {
   //const [Images, setImage] = useState([]);
@@ -32,7 +32,8 @@ export default function Home() {
 
   return (
     <>
-      <MiniDrawer />
+      <Drawer />
+     
 <Toggle/>
 
       {posts.map((post) => {

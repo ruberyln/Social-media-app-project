@@ -92,33 +92,27 @@ function Post({ post, fetchPosts }) {
 
 
   return (
-    <div>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }} width = "100ch">
+   <div>
+
+      <Box component="main" sx={{ flexGrow: 3, p: 8 }} width="100ch">
         <Container component="main">
           <Card
             alignItems="center"
             justifyContent="center"
           >
             <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              avatar={<Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
 
-                </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-               {(createdBy===user._id)&&  <button onClick={handleDelete}>Delete</button>}
-                </IconButton>
-              }
+              </Avatar>}
+              action={<IconButton aria-label="settings">
+                {(createdBy === user._id) && <button onClick={handleDelete}>Delete</button>}
+              </IconButton>}
               title={createdBy ? createdBy.userName : "John"}
-              subheader={moment(createdAt).format("MMMM D, YYYY")}
-            />
+              subheader={moment(createdAt).format("MMMM D, YYYY")} />
             <CardMedia
               component="img"
-              height="400"
-              image={imgPath}
-
-            />
+              height="500"
+              image={imgPath} />
             <CardContent>
               <Typography variant="body2" color="text.secondary">
                 {desc}
@@ -126,9 +120,9 @@ function Post({ post, fetchPosts }) {
             </CardContent>
 
             {/* <IconButton aria-label="add to favorites">
-              </IconButton> */}
-            < LikeButton likes={likes} disLikes={disLikes} fetchPosts={fetchPosts} postId={_id} />
-            <CardActions >
+      </IconButton> */}
+            <LikeButton likes={likes} disLikes={disLikes} fetchPosts={fetchPosts} postId={_id} />
+            <CardActions>
               <Typography variant="h6">View Comments
                 <ExpandMore
                   expand={expanded}
@@ -172,7 +166,7 @@ function Post({ post, fetchPosts }) {
                 value={comment}
                 onChange={(e) => {
                   setComment(e.target.value);
-                }}
+                } }
               >
                 Comment
               </TextField>
