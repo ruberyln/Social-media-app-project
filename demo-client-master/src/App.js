@@ -45,6 +45,11 @@ function App() {
           path="/followers"
           element={user ? <Followers /> : <Followers />}
         />
+         <Route
+          exact
+          path="/following"
+          element={user ? <Following /> : <Following />}
+        />
        
         <Route
           exact

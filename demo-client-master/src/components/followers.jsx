@@ -21,7 +21,8 @@ export default function Followers() {
             alignItems: "center",
           }}
         >
-      <Typography>Followers</Typography>
+      <Typography variant = "h6">FOLLOWERS
+      </Typography>
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', mt:'4' }}>
           <ListItem alignItems="flex-start">
               <ListItemAvatar>

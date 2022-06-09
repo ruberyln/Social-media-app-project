@@ -6,7 +6,7 @@ import Followers from "./followers";
 
 
 function Follow () {
-const [follow , setfollow] = useState (2000)
+const [follow , setfollow] = useState (3)
 
 const [followactive, setfollowactive] =useState(false)
 
@@ -36,9 +36,9 @@ return (
    
     <Button variant="outlined" color = "secondary"
     component = {Link}
-    href = {"/following"} >Following 100 </Button> 
+    href = {"/following"} >Following 3 </Button> 
 
-    
+
     <IconButton onClick = {followf} variant="outlined" color = "secondary" ><PersonAddAlt1Icon/> </IconButton>
  
     </Stack>
