@@ -32,7 +32,7 @@ router.post("/upVote", async (req, res) => {
     { _id: body.postId },
     {
       $addToSet: {
-        likes: body.userId
+        likes: body.userId 
       },
       $pull:{
         disLikes:body.userId
@@ -41,6 +41,12 @@ router.post("/upVote", async (req, res) => {
     { new: true }
   );
   return res.status(200).json(result);
+});
+
+router.delete("/", async (req,res) => {
+  let result = await Post.findOneAndDelete (
+    {_id:req.body.postId})
+    return res.status(200).json(result)
 });
 // {
 //   userId,

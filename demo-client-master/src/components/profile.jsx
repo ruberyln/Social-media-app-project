@@ -44,7 +44,8 @@ export default function Profile() {
                   }}
               >
                   <Container maxWidth="sm">
-                      <Stack  direction="row" spacing={2} >
+                      
+                      <Stack  direction="row" spacing={1}sx = {{mt : 3}} >
                 <Avatar src="/broken-image.jpg" sx={{ width:65, height:65}} />  
                 <Typography>@user</Typography>
 </Stack>

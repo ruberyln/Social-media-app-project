@@ -85,7 +85,7 @@ function Post({ post, fetchPosts }) {
       .then((res) => fetchPosts())
       .catch((error) => {
         console.error(error);
-        console.error("Comment not deleted");
+        console.error("Post not deleted");
       });
   };
 
