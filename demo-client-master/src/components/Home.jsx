@@ -4,7 +4,7 @@ import commonApi from "../api/common";
 import Toggle from "./toggle";
 import { useState, useEffect } from "react";
 import Post from "./Post";
-import FollowerPost from './followerpost';
+
 // import commonApi from "../api/common";
 //import Avatar from '@mui/material/Avatar'
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';

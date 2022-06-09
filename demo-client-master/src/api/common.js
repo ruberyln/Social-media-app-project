@@ -24,4 +24,6 @@ const commonApi = ({ parameters = [], action, module = "", data, config }) => {
   );
 };
 
+
+
 export default commonApi;

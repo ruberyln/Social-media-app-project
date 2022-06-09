@@ -31,6 +31,10 @@ const apiList = {
   downVoting:{
     url:()=>"api/posts/downVote",
     method:"post",
+  },
+  deletePost:{
+    url:()=>`api/posts`,
+    method:"delete"
   }
 };
 export default apiList;

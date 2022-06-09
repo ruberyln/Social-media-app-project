@@ -26,6 +26,8 @@ const ACTION_HANDLERS = {
     axios.post(baseUrl + url, data, {
       headers,
     }),
+  [DELETE]: (url, data, headers) =>
+    axios.delete(baseUrl + url, { headers, data }),
 
   [PUT]: (url, data, headers) =>
     axios.put(baseUrl + url, data, {
@@ -48,7 +50,7 @@ const fetchUrl = ({ type, url, data = {}, config = {}, hash = "" }) => {
 
   return handler(url, data, config.headers)
     .then((response) => Promise.resolve(response.data))
-    
+
 };
 
 export default fetchUrl;

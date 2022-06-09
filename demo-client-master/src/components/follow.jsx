@@ -1,7 +1,8 @@
 
 import React, { useState } from "react";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import {Stack, Button,IconButton} from '@mui/material'
+import {Stack, Button,IconButton,Link} from '@mui/material'
+//import Followers from "./followers";
 
 
 function Follow () {
@@ -26,9 +27,12 @@ return (
     spacing={10}
     justifyContent="center"
 >
-    <Stack direction="row" spacing={4}>
+    <Stack direction="row" spacing={6}>
     <Button variant="contained" color = "secondary">Edit </Button>
-    <Button  variant="outlined" color = "secondary">Followers {follow} </Button>
+    <Button  variant="outlined" color = "secondary" 
+    component = {Link}
+    href = {"/followers"}> Followers {follow} 
+    </Button>
     <Button variant="outlined" color = "secondary">Following 100 </Button>
     <IconButton onClick = {followf} variant="outlined" color = "secondary" ><PersonAddAlt1Icon/> </IconButton>
  
