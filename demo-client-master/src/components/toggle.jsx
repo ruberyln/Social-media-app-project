@@ -4,7 +4,8 @@ import { styled } from '@mui/material/styles';
 //import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
+import {Typography, }from '@mui/material';
+
 
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
@@ -54,7 +55,9 @@ export default function Toggle() {
 
       <Stack direction="row" spacing={1} alignItems="flex-end" justifyContent= "flex-end">
         <Typography>Others</Typography>
-        <AntSwitch defaultChecked color ="secondary" inputProps={{ 'aria-label': 'ant design' }}  />
+        <AntSwitch defaultChecked color ="secondary" inputProps={{ 'aria-label': 'ant design' }}
+
+  />
         <Typography>Following</Typography>
       </Stack>
       

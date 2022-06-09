@@ -24,7 +24,7 @@ import { red } from "@mui/material/colors";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 //import CardContent from '@mui/material/CardContent';
-import { CardHeader, CardActions, CardContent } from "@mui/material";
+import { CardHeader, CardActions, CardContent, Grid} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import moment from "moment";
 //import Stack from '@mui/material/Stack';
@@ -78,7 +78,9 @@ if(images.length!==0)
   };
   return (
     <div>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+     
+      <Box display="center" sx={{ flexGrow: 1, p: 3 }} 
+         width ="100ch">
         <Container component="main">
           <Card 
           alignItems="center" 
@@ -177,6 +179,7 @@ if(images.length!==0)
           </Card>
         </Container>
       </Box>
+     
     </div>
   );
 }
