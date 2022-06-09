@@ -134,7 +134,7 @@ const handleLogout =() => {
                 })
               }
               } >
-          HOME
+     
         </Typography>
       </Toolbar>
     </AppBar>
@@ -146,7 +146,7 @@ const handleLogout =() => {
       </DrawerHeader>
       <Divider />
       <List>
-        {['Home', 'Notifications'].map((text, index) => (
+        {['Home'].map((text) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
             <ListItemButton
               sx={{
@@ -170,7 +170,7 @@ const handleLogout =() => {
                   justifyContent: 'center',
                 }}
               >
-                {index % 2 === 0 ? <HomeIcon /> : <NotificationsOutlinedIcon />}
+            <HomeIcon /> 
 
               </ListItemIcon>
               <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />

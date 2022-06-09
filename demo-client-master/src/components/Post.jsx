@@ -11,11 +11,10 @@ import commonApi from "../api/common";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Container from "@mui/material/Container";
 import { useState, } from "react";
 import LikeButton from "./likebutton";
-
+//import MoreVertIcon from '@mui/icons-material/MoreVert';
 //import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
 //import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Card from "@mui/material/Card";
@@ -105,7 +104,8 @@ function Post({ post, fetchPosts }) {
 
               </Avatar>}
               action={<IconButton aria-label="settings">
-                {(createdBy === user._id) && <button onClick={handleDelete}>Delete</button>}
+                {(createdBy._id === user._id) && <Button onClick={handleDelete}>Delete</Button>}
+                
               </IconButton>}
               title={createdBy ? createdBy.userName : "John"}
               subheader={moment(createdAt).format("MMMM D, YYYY")} />

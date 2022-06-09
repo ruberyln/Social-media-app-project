@@ -10,7 +10,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 
 import Box from '@mui/material/Box';
-import {Avatar} from '@mui/material';
+import {Avatar,Stack} from '@mui/material';
 import Follow from './follow'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -18,7 +18,7 @@ import Container from '@mui/material/Container';
 import Drawer from './drawer'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Followers from './followers';
+
 
 
 
@@ -44,8 +44,10 @@ export default function Profile() {
                   }}
               >
                   <Container maxWidth="sm">
+                      <Stack  direction="row" spacing={2} >
                 <Avatar src="/broken-image.jpg" sx={{ width:65, height:65}} />  
-
+                <Typography>@user</Typography>
+</Stack>
                 
                   <Follow/>
                  
