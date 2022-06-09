@@ -27,7 +27,7 @@ return (
     justifyContent="center"
 >
     <Button  variant="outlined" color = "secondary">Followers {follow} </Button>
-    <Button variant="outlined" color = "secondary">Following </Button>
+    <Button variant="outlined" color = "secondary">Following 100 </Button>
     <IconButton onClick = {followf} variant="outlined" color = "secondary" ><PersonAddAlt1Icon/> </IconButton>
 
    

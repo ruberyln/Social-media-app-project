@@ -8,9 +8,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
-import Stack from '@mui/material/Stack';
+
 import Box from '@mui/material/Box';
-import {Avatar, IconButton} from '@mui/material';
+import {Avatar} from '@mui/material';
 import Follow from './follow'
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -18,7 +18,7 @@ import Container from '@mui/material/Container';
 import Drawer from './drawer'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+
 
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -43,7 +43,7 @@ export default function Profile() {
                   }}
               >
                   <Container maxWidth="sm">
-                <Avatar src="/broken-image.jpg" />  
+                <Avatar src="/broken-image.jpg" sx={{ width:65, height:65}} />  
 
                 
                   <Follow/>

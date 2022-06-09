@@ -1,9 +1,10 @@
 import * as React from "react";
 
 import commonApi from "../api/common";
-
+import Toggle from "./toggle";
 import { useState, useEffect } from "react";
 import Post from "./Post";
+
 // import commonApi from "../api/common";
 //import Avatar from '@mui/material/Avatar'
 //import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -13,6 +14,7 @@ import Post from "./Post";
 //import Stack from '@mui/material/Stack';
 
 import MiniDrawer from "./drawer";
+import Filter from "./filter";
 export default function Home() {
   //const [Images, setImage] = useState([]);
   const [posts, setPosts] = useState([]);
@@ -31,7 +33,8 @@ export default function Home() {
   return (
     <>
       <MiniDrawer />
-      
+<Toggle/>
+
       {posts.map((post) => {
         return <Post post={post} fetchPosts={fetchPosts} />;
       })}

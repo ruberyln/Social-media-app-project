@@ -11,6 +11,8 @@ import { Route, Routes } from "react-router-dom";
 import SignOut from "./components/signout";
 import Success from "./components/success";
 import Follow from "./components/follow";
+import Toggle from "./components/toggle"
+import Filter from "./components/filter";
 //import Upload from "./components/upload";
 import { useContext } from "react";
 import { Context } from "./userContext/Context";
