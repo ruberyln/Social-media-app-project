@@ -15,7 +15,9 @@ import { useContext } from "react";
 import { Context } from "./userContext/Context";
 import Home from "./components/Home";
 import CreatePost from "./components/Createpost";
-
+import Following from "./components/following"
+import Follow from "./components/follow";
+import Followers from "./components/followers";
 //import { Container } from '@mui/system';
 //import Typography from '@mui/material/Typography';
 <meta name="viewport" content="initial-scale=1, width=device-width" />;
@@ -24,7 +26,7 @@ function App() {
   const { user } = useContext(Context);
   return (
     <div>
-      <Navbar />
+     
 
       <Routes>
         <Route exact path="/upload" element={user ? <CreatePost /> : <SignIn />} />
@@ -38,6 +40,12 @@ function App() {
           path="/profile"
           element={user ? <Profile /> : <Profile />}
         />
+          <Route
+          exact
+          path="/followers"
+          element={user ? <Followers /> : <Followers />}
+        />
+       
         <Route
           exact
           path="/success"

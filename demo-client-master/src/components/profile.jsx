@@ -18,6 +18,7 @@ import Container from '@mui/material/Container';
 import Drawer from './drawer'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Followers from './followers';
 
 
 
@@ -47,6 +48,7 @@ export default function Profile() {
 
                 
                   <Follow/>
+                 
                      
                   </Container>
               </Box>
