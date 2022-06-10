@@ -116,7 +116,7 @@ export default function Profile() {
             onChange={(e) => setFile(e.target.files[0])}
             /> 
            <Button variant="contained"  size = "small" component="span" color = "secondary">
-          Edit Profile
+          Edit Image
         </Button>
         </label>
 

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
@@ -7,10 +8,17 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import  Drawer  from './drawer';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import { Container,Box,Stack,IconButton,Grid } from '@mui/material';
-export default function Followers() {
 
+import { Container,Box,Stack,IconButton,Grid ,Button} from '@mui/material';
+
+export default function Followers() {
+const [state, setState] = useState(false);
+const follow=() => {
+    setState(!state);
+}
+    
     const lists = [1,2,3]
   return (
       <><Drawer/>
@@ -50,7 +58,10 @@ export default function Followers() {
                       >
                           Ali Connors
                       </Typography>
-                      <IconButton color = "secondary"> <PersonAddAlt1Icon/></IconButton>
+                      
+                      <Button onClick = {follow} color = "secondary"> 
+                      { state ? <HowToRegIcon/> : < PersonAddAlt1Icon/>} 
+                      </Button>
                   </React.Fragment>} />
                
           </ListItem>

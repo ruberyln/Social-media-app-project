@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import {Stack, Button,IconButton,Link} from '@mui/material'
-import Followers from "./followers";
-
+//import Followers from "./followers";
+import Following from "./following";
 
 function Follow () {
-const [follow , setfollow] = useState (3)
+const [follow , setfollow] = useState (1)
 
 const [followactive, setfollowactive] =useState(false)
 

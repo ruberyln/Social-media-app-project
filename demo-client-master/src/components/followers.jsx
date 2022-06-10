@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
@@ -7,11 +8,18 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import  Drawer  from './drawer';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
 import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
-import { Container,Box,Stack,IconButton,Grid } from '@mui/material';
-export default function Followers() {
 
-    const lists = [1,2,3]
+import { Container,Box,Stack,IconButton,Grid ,Button} from '@mui/material';
+
+export default function Followers() {
+const [state, setState] = useState(false);
+const follow=() => {
+    setState(!state);
+}
+    
+    //const lists = [1,2,3]
   return (
       <><Drawer/>
       <Container component ="main">
@@ -27,8 +35,8 @@ export default function Followers() {
       <Typography variant = "h6">FOLLOWERS
       </Typography>
       <Grid >
-            {lists.map((list) => (
-              <Grid item key={list} xs={12} >
+           
+              
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', mt:'4' }}>
           <ListItem alignItems="flex-start">
           
@@ -50,7 +58,10 @@ export default function Followers() {
                       >
                           Ali Connors
                       </Typography>
-                      <IconButton color = "secondary"> <PersonAddAlt1Icon/></IconButton>
+                      
+                      <Button onClick = {follow} color = "secondary"> 
+                      { state ? <HowToRegIcon/> : < PersonAddAlt1Icon/>} 
+                      </Button>
                   </React.Fragment>} />
                
           </ListItem>
@@ -59,8 +70,8 @@ export default function Followers() {
           
       </List>
       </Grid>
-            ))}
-            </Grid>
+           
+           
      </Box>
     
       </Container></>
