@@ -1,25 +1,12 @@
 
 import React, { useState } from "react";
-import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+//import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
 import {Stack, Button,IconButton,Link} from '@mui/material'
 //import Followers from "./followers";
-import Following from "./following";
+//import Following from "./following";
 
 function Follow () {
-const [follow , setfollow] = useState (1)
 
-const [followactive, setfollowactive] =useState(false)
-
-function followf(){
-    if(followactive){
-        setfollowactive (false)
-        setfollow(follow-1)
-
-    }else{
-        setfollowactive(true)
-        setfollow(follow+1)
-    }
-}
 return (
     <Stack
     sx={{ pt: 0.5 }}
@@ -29,17 +16,17 @@ return (
 >
     <Stack direction="row" spacing={6} mt = {10}>
   
-    <Button  variant="outlined" color = "secondary" 
+    <Button  variant="contained" color = "secondary" 
     component = {Link}
-    href = {"/followers"}> Followers {follow} 
+    href = {"/followers"}> Followers 
     </Button>
    
-    <Button variant="outlined" color = "secondary"
+    <Button variant="contained" color = "secondary"
     component = {Link}
-    href = {"/following"} >Following 3 </Button> 
+    href = {"/following"} >Following  </Button> 
 
 
-    <IconButton onClick = {followf} variant="outlined" color = "secondary" ><PersonAddAlt1Icon/> </IconButton>
+
  
     </Stack>
    
