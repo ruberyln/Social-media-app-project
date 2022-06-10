@@ -7,12 +7,15 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import  Drawer  from './drawer';
-import { Container,Box } from '@mui/material';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import { Container,Box,Stack,IconButton,Grid } from '@mui/material';
 export default function Followers() {
 
+    const lists = [1,2,3]
   return (
       <><Drawer/>
       <Container component ="main">
+     
            <Box
           sx={{
             marginTop: 11,
@@ -23,11 +26,19 @@ export default function Followers() {
         >
       <Typography variant = "h6">FOLLOWERS
       </Typography>
+      <Grid >
+            {lists.map((list) => (
+              <Grid item key={list} xs={12} >
       <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', mt:'4' }}>
           <ListItem alignItems="flex-start">
+          
               <ListItemAvatar>
+                  
                   <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                
+                 
               </ListItemAvatar>
+            
               <ListItemText
 
                   secondary={<React.Fragment>
@@ -39,51 +50,19 @@ export default function Followers() {
                       >
                           Ali Connors
                       </Typography>
-
+                      <IconButton color = "secondary"> <PersonAddAlt1Icon/></IconButton>
                   </React.Fragment>} />
+               
           </ListItem>
           <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                  <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
-              </ListItemAvatar>
-              <ListItemText
-
-primary={<React.Fragment>
-    <Typography
-        sx={{ display: 'inline' }}
-        component="span"
-        variant="body2"
-        color="text.primary"
-    >
-      Tim
-    </Typography>
-
-                
-
-                  </React.Fragment>} />
-          </ListItem>
-          <Divider variant="inset" component="li" />
-          <ListItem alignItems="flex-start">
-              <ListItemAvatar>
-                  <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-              </ListItemAvatar>
-              <ListItemText
-
-                  primary={<React.Fragment>
-                      <Typography
-                          sx={{ display: 'inline' }}
-                          component="span"
-                          variant="body2"
-                          color="text.primary"
-                      >
-                          Sandra Adams
-                      </Typography>
-
-                  </React.Fragment>} />
-          </ListItem>
+          
+          
       </List>
+      </Grid>
+            ))}
+            </Grid>
      </Box>
+    
       </Container></>
   );
 }
