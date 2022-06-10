@@ -32,6 +32,10 @@ const apiList = {
     url:()=>"api/posts/downVote",
     method:"post",
   },
+  updateUser:{
+    url:()=>"api/users/updateUser",
+    method:"put",
+  },
   deletePost:{
     url:()=>`api/posts`,
     method:"delete"

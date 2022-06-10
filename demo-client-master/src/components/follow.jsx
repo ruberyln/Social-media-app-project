@@ -27,8 +27,8 @@ return (
     spacing={10}
     justifyContent="center"
 >
-    <Stack direction="row" spacing={6}>
-    <Button variant="contained" color = "secondary">Edit </Button>
+    <Stack direction="row" spacing={6} mt = {10}>
+  
     <Button  variant="outlined" color = "secondary" 
     component = {Link}
     href = {"/followers"}> Followers {follow} 
