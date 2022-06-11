@@ -20,6 +20,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from '@mui/material/Link';
 import HomeIcon from '@mui/icons-material/Home';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
@@ -232,7 +233,32 @@ const handleLogout =() => {
           </ListItem>
         ))}
       </List>
+      <List>
+        {['Suggestions'].map((text,) => (
+          <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              sx={{
+                minHeight: 80,
+                justifyContent: open ? 'initial' : 'center',
+                px: 2.5,
+              }}
+              component={Link}
+             href= {"/suggestion"}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                }}>
+                <PersonAddAltIcon />
 
+              </ListItemIcon>
+              <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
       <List>
         {['Logout'].map((text,) => (
           <ListItem key={text} disablePadding sx={{ display: 'block' }}>
