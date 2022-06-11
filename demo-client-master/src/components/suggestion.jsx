@@ -32,7 +32,7 @@ const follow=() => {
             alignItems: "center",
           }}
         >
-      <Typography variant = "h6">FOLLOWING
+      <Typography variant = "h6">WHO TO FOLLOW
       </Typography>
       <Grid >
             {lists.map((list) => (
