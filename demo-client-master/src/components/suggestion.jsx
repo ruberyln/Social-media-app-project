@@ -60,7 +60,7 @@ const follow=() => {
                       </Typography>
                       
                       <Button onClick = {follow} color = "secondary"> 
-                      { state ?  < PersonAddAlt1Icon/> : <HowToRegIcon/> } 
+                      { state ? <HowToRegIcon/> : < PersonAddAlt1Icon/> } 
                       </Button>
                   </React.Fragment>} />
                
